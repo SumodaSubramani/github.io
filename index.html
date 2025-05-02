@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narava Sumoda Subramani - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: white;
+            padding: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            border: 3px solid #fff;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-details p {
+            font-size: 1.1rem;
+            margin: 0.2rem 0;
+        }
+
+        .contact-details h1 {
+            font-size: 1.8rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0.5rem 1.2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1b263b;
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #0d1b2a;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            width: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skills-grid, .experience-grid, .certifications-grid, .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .education-list, .achievements-list, .activities-list, .profiles-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skills-grid ul, .experience-grid ul, .certifications-grid ul,
+        .education-list ul, .achievements-list ul, .activities-list ul, .profiles-grid ul {
+            list-style: none;
+        }
+
+        .skills-grid ul li, .experience-grid ul li, .certifications-grid ul li,
+        .education-list ul li, .achievements-list ul li, .activities-list ul li, .profiles-grid ul li {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .link-button {
+            background-color: #1b263b;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .link-button:hover {
+            background-color: #0d1b2a;
+        }
+
+        @media (max-width: 768px) {
+            .contact-details h1 {
+                font-size: 1.6rem;
+            }
+
+            .contact-details p {
+                font-size: 1rem;
+            }
+
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            nav ul li {
+                margin: 0.3rem 0;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            .skills-grid, .experience-grid, .certifications-grid, .profiles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-details h1 {
+                font-size: 1.4rem;
+            }
+
+            .profile-pic {
+                width: 70px;
+                height: 70px;
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .link-button {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .contact-details h1 {
+                font-size: 1.2rem;
+            }
+
+            .contact-details p {
+                font-size: 0.9rem;
+            }
+
+            nav ul li a {
+                font-size: 0.8rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="assets/profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="contact-details">
+                    <h1>Narava Sumoda Subramani</h1>
+                    <p>Email: sumoda355@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#profiles">Profiles</a></li>
+            <li><a href="#activities">Activities</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="card">
+                <p>A dedicated and results-driven B.Tech student with a strong foundation in web development and programming. Proficient in leveraging technical expertise and analytical skills to deliver innovative solutions. Committed to continuous learning and professional growth in a dynamic tech environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-list">
+                <div class="card">
+                    <ul>
+                        <li><strong>Gayatri Vidya Parishad College of Engineering</strong> - B.Tech, 3rd Year</li>
+                        <li><strong>Intermediate (MPC)</strong> - 97.6%</li>
+                        <li><strong>St. Josephs Secondary School (ICSE)</strong> - 93.4%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <ul>
+                        <li><strong>Programming Languages:</strong> C, C++, Java, Python (Basic)</li>
+                        <li><strong>Core Concepts:</strong> Data Structures & Algorithms, OOPS, Operating Systems, Database Management Systems</li>
+                        <li><strong>Web Development:</strong> HTML, CSS, MERN Stack</li>
+                        <li><strong>Professional Skills:</strong> Problem-solving, Analytical Thinking, Communication, Teamwork, Adaptability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="card">
+                    <ul>
+                        <li><strong>Food Delivery Website</strong> - Designed and developed a responsive food delivery website using HTML and CSS.</li>
+                        <li><strong>AWS Data Engineering Virtual Internship</strong> - Gained experience in cloud computing and data engineering principles.</li>
+                        <li><strong>Full Stack Web Developer Virtual Internship</strong> - Acquired hands-on experience in full stack web development.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <div class="card">
+                    <ul>
+                        <li>Python Programming <a href="https://drive.google.com/file/d/1xSzxYzvoPdyb625KqX6x-PPCypZl_47v/view?usp=sharing" target="_blank" class="link-button">View</a></li>
+                        <li>C++ Programming <a href="https://drive.google.com/file/d/1yGzRi4dP92bZ0WPHQLNtL_W4mhRhhncM/view?usp=sharing" target="_blank" class="link-button">View</a></li>
+                        <li>AWS Data Engineering <a href="https://drive.google.com/file/d/1N1fizmMLEflRD3IOJrR7xcyWpca2CYDA/view?usp=sharing" target="_blank" class="link-button">View</a></li>
+                        <li>Google AI-ML <a href="https://drive.google.com/file/d/1Sbe-92FaIcuzDxUwoDgfTOINEoB-SAY4/view?usp=sharing" target="_blank" class="link-button">View</a></li>
+                        <li>Full Stack Web Development <a href="https://drive.google.com/file/d/1EejE9LkFpMqk6VunIwvErZbzQ-bGN8_s/view?usp=sharing" target="_blank" class="link-button">View</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2>Achievements</h2>
+            <div class="achievements-list">
+                <div class="card">
+                    <ul>
+                        <li>Solved 100+ problems on LeetCode</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profiles">
+        <div class="container">
+            <h2>Professional Profiles</h2>
+            <div class="profiles-grid">
+                <div class="card">
+                    <ul>
+                        <li>LeetCode <a href="https://leetcode.com/u/SumodaSubramani/" target="_blank" class="link-button">Visit</a></li>
+                        <li>CodeChef <a href="https://www.codechef.com/users/sumoda_53" target="_blank" class="link-button">Visit</a></li>
+                        <li>GitHub <a href="https://github.com/SumodaSubramani/" target="_blank" class="link-button">Visit</a></li>
+                        <li>LinkedIn <a href="https://www.linkedin.com/in/sumoda-subramani-narava/" target="_blank" class="link-button">Visit</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities">
+        <div class="container">
+            <h2>Activities & Interests</h2>
+            <div class="activities-list">
+                <div class="card">
+                    <ul>
+                        <li>Active member of the Rotaract Club at college</li>
+                        <li>Passionate about Web Development</li>
+                        <li>Keen interest in emerging technologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
